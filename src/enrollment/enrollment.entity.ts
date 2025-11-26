@@ -19,5 +19,6 @@ export class Enrollment {
     dateOfBirth: Date;
 
     @Column()
-    phone: string;
+    studentPhone: string;
+
 }

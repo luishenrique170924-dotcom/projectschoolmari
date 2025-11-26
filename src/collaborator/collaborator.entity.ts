@@ -11,6 +11,9 @@ export class Collaborator {
     @Column()
     email: string;
 
+    @Column()
+    password: string;
+
 
 
 }
