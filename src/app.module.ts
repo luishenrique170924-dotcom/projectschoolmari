@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CourseModule } from './course/course.module';
-import { EnrollmentModule } from './enrollment/enrollment.module';
+import { EnrollmentsModule } from './enrollment/enrollment.module';
 import { CollaboratorModule } from './collaborator/collaborator.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -24,7 +24,7 @@ import { AuthModule } from './auth/auth.module';
       synchronize: false,
       logging: true,
     }),
-    CourseModule, EnrollmentModule, CollaboratorModule, AuthModule
+    CourseModule, EnrollmentsModule, CollaboratorModule, AuthModule
   ],
 
   controllers: [AppController],

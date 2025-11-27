@@ -10,7 +10,7 @@ export default new DataSource({
     username: "root",
     password: "",      
     database: "school_mari",
-    entities: [Course],
-    migrations: ["src/migrations/*.ts"],   // sem ./ no início
+    entities: [Course, Collaborator, Enrollment],
+    migrations: ["src/migrations/*.ts"],   
 });
 

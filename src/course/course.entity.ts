@@ -1,7 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-
-@Entity()
+@Entity('course')
 export class Course {
     @PrimaryGeneratedColumn()
     id: number;
@@ -17,7 +16,4 @@ export class Course {
 
     @Column()
     active: boolean;
-
-
-
 }
