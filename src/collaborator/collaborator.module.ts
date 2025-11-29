@@ -8,7 +8,7 @@ import { CollaboratorController } from './collaborator.controller';
   imports: [TypeOrmModule.forFeature([Collaborator])],
   providers: [CollaboratorService],
   controllers: [CollaboratorController],
-  exports: [CollaboratorService], // importante para AuthModule
+  exports: [CollaboratorService], 
 })
 export class CollaboratorModule {}
 

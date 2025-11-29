@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Course } from './course.entity';
 import { Repository } from 'typeorm';
@@ -40,10 +40,20 @@ export class CourseService {
     }
 
     async delete(id: number) {
-        await this.courseRepository.delete(id);
-        return { message: "Deletado com sucesso" };
-    }
-
+        const course = await this.courseRepository.findOne({ where: { id } });
+      
+        if (!course) {
+          throw new NotFoundException('Curso não encontrado');
+        }
+      
+        course.active = false;
+      
+        await this.courseRepository.save(course);
+      
+        return {
+          message: 'Curso marcado como inativo com sucesso.',
+        };
+      }
 
 
 
